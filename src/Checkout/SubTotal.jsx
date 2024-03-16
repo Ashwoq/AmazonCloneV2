@@ -17,7 +17,7 @@ const SubTotal = () => {
         <div className="text-[#008500] text-xs font-medium">
           Part of your order qualifies for a FREE Delivery.
           <span className="text-[#565959]">
-            &nbsp;Select this option at checkout.&nbsp;
+            &nbsp;Select this option at checkout&nbsp;
           </span>
           <span className="text-[#007185]">Details</span>
         </div>

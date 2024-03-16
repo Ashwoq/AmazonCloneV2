@@ -1,0 +1,137 @@
+[
+  {
+    "name": "topFooter",
+    "data": [
+      {
+        "colName": "Get to Know Us",
+        "colData": [
+          { "calValue": "About Us" },
+          { "calValue": "Careers" },
+          { "calValue": "Press Releases" },
+          { "calValue": "Amazon Science" }
+        ]
+      },
+      {
+        "colName": "Connect with Us",
+        "colData": [
+          { "calValue": "Facebook" },
+          { "calValue": "Twitter" },
+          { "calValue": "Instagram" }
+        ]
+      },
+      {
+        "colName": "Make Money with Us",
+        "colData": [
+          { "calValue": "Sell on Amazon" },
+          { "calValue": "Sell under Amazon Accelerator" },
+          { "calValue": "Protect and Build Your Brand" },
+          { "calValue": "Amazon Global Selling" },
+          { "calValue": "Become an Affiliate" },
+          { "calValue": "Fulfilment by Amazon" },
+          { "calValue": "Advertise Your Products" },
+          { "calValue": "Amazon Pay on Merchants" }
+        ]
+      },
+      {
+        "colName": "Let Us Help You",
+        "colData": [
+          { "calValue": "COVID-19 and Amazon" },
+          { "calValue": "Your Account" },
+          { "calValue": "Returns Centre" },
+          { "calValue": "100% Purchase Protection" },
+          { "calValue": "Help" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "downFooter",
+    "data": [
+      {
+        "head": "AbeBooks",
+        "para": "Books, art & collections"
+      },
+      {
+        "head": "Amazon Web Services",
+        "para": "Scalable Cloud Computing Services"
+      },
+      {
+        "head": "Audible",
+        "para": "Download Audio Books"
+      },
+      {
+        "head": "IMDb",
+        "para": "Movies, TV & Celebrities"
+      },
+      {
+        "head": "Shopbop",
+        "para": "Designer Fashion Brands"
+      },
+      {
+        "head": "Amazon Business",
+        "para": "Everything For Your Business"
+      },
+      {
+        "head": "Prime Now",
+        "para": "2-Hour Delivery on Everyday Items"
+      },
+      {
+        "head": "Amazon Prime Music",
+        "para": "100 million songs, ad-free Over 15 million podcast episodes"
+      }
+    ]
+  },
+  {
+    "name": "countries",
+    "data": [
+      {
+        "country": "Australia"
+      },
+      {
+        "country": "Brazil"
+      },
+      {
+        "country": "Canada"
+      },
+      {
+        "country": "China"
+      },
+      {
+        "country": "Germany"
+      },
+      {
+        "country": "Italy"
+      },
+      {
+        "country": "Japan"
+      },
+      {
+        "country": "Mexico"
+      },
+      {
+        "country": "Netherlands"
+      },
+      {
+        "country": "Poland"
+      },
+      {
+        "country": "Singapore"
+      },
+      {
+        "country": "Spain"
+      },
+      {
+        "country": "Turkey"
+      },
+      {
+        "country": "United Arab Emirates"
+      },
+      {
+        "country": "United Kingdom"
+      },
+      {
+        "country": "United States"
+      }
+    ]
+  }
+]

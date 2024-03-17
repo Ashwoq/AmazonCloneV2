@@ -12,6 +12,7 @@ const CheckOutProducts = ({
   sellerCompany,
   hideButton,
   ratings,
+  qty,
 }) => {
   const [{ basket }, dispatch] = useStateValue();
   const [open, setOpen] = useState(true);
@@ -22,6 +23,42 @@ const CheckOutProducts = ({
       id: title,
     });
     Swal.fire("😒", "Item has been Deleted ", "success");
+  };
+
+  const addToBasket = () => {
+    setOpen(true);
+
+    // Check if the item already exists in the basket
+    const existingItemIndex = basket.findIndex((item) => item.title === title);
+
+    if (existingItemIndex !== -1) {
+      // If the item exists, update its quantity
+      const updatedBasket = [...basket];
+      updatedBasket[existingItemIndex].qty += 1;
+
+      dispatch({
+        type: "UPDATE_BASKET_ITEM",
+        basket: updatedBasket,
+      });
+    } else {
+      // If the item doesn't exist, add it to the basket
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: title,
+          description: description,
+          sellerName: sellerName,
+          sellerCompany: sellerCompany,
+          title: title,
+          price: price,
+          image: imgSRC,
+          ratings: ratings,
+          qty: 1, // Initial quantity set to 1 for a new item
+        },
+      });
+    }
+
+    Swal.fire("Hey!", "Item Added to the Cart", "success");
   };
 
   return (
@@ -44,6 +81,7 @@ const CheckOutProducts = ({
           <div className="font-semibold lg:text-xl xs:text-md">{title}</div>
           <div className="leading-5 lg:text-base xs:text-xs">{description}</div>
           <div className="mt-1 text-sm">{sellerName}</div>
+          <div className="mt-1 text-sm">{qty}</div>
           <div className="flex">
             {Array(ratings)
               .fill()
@@ -69,15 +107,34 @@ const CheckOutProducts = ({
             </span>
           </div>
           {!hideButton && (
-            <button
-              className=" rounded-xl  bg-[#FFD814] hover:bg-[#f7ca00] p-1 border my-3 text-center transition px-6 pb-2 text-sm border-[#FCD200] shadow-md lg:scale-[1] xs:scale-[0.8] "
-              onClick={() => {
-                // setOpen(true);
-                removeFromBasket();
-              }}
-            >
-              Delete
-            </button>
+            // <button
+            //   className="rounded-xl bg-[#FFD814] hover:bg-[#f7ca00] p-1 border my-3 text-center transition px-6 pb-2 text-sm border-[#FCD200] shadow-md lg:scale-[1] xs:scale-[0.8] "
+            //   onClick={() => {
+            //     // setOpen(true);
+            //     removeFromBasket();
+            //   }}
+            // >
+            //   Delete
+            // </button>
+
+            <div className="flex w-max my-3 bg-red-100 border border-[#FCD200] shadow-md">
+              <button
+                className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  "
+                onClick={() => removeFromBasket()}
+              >
+                -
+              </button>
+              <div className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00] ">
+                {qty}
+              </div>
+
+              <button
+                className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00] "
+                onClick={() => addToBasket()}
+              >
+                +
+              </button>
+            </div>
           )}
         </div>
         <div className="font-semibold text-right lg:text-xl xs:text-md ">
@@ -90,4 +147,3 @@ const CheckOutProducts = ({
 };
 
 export default CheckOutProducts;
-``;

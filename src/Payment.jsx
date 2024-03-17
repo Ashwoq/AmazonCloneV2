@@ -104,6 +104,7 @@ const Payment = () => {
                   price={item.price}
                   sellerName={item.sellerName}
                   sellerCompany={item.sellerCompany}
+                  qty={item.qty}
                 />
               </div>
             ))}

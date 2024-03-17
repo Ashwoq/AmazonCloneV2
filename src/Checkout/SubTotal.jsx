@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue } from "./StateProvider";
 import { getBasketTotal } from "./Reducer";
+import { getBasketItem } from "./Reducer";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 const SubTotal = () => {
   const history = useNavigate();
   const [{ basket }, dispatch] = useStateValue();
+  const totalQuantity = basket.reduce((total, item) => total + item.qty, 0);
+
   return (
     <div className="flex flex-col justify-between p-5 bg-white border-gray-500 rounded-sm">
       <div className="flex text-[#008500] ">
@@ -25,7 +28,7 @@ const SubTotal = () => {
 
       <div className="my-2 ">
         <div className="text-lg">
-          Subtotal ({basket.length} items):
+          Subtotal ({getBasketItem(basket)} items):
           <strong>₹{getBasketTotal(basket).toFixed(2)}</strong>
         </div>
         <small className="flex items-center ">

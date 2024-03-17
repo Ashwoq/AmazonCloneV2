@@ -5,21 +5,47 @@ import { Star } from "@mui/icons-material";
 const AllProducts = ({ productItem }) => {
   const [{ basket }, dispatch] = useStateValue();
 
-  const addToBasket = (selectedItem) => {
+  const removeFromBasket = (selectedItem) => {
     dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: selectedItem.title,
-        description: selectedItem.description,
-        sellerName: selectedItem.sellerName,
-        sellerCompany: selectedItem.sellerCompany,
-        title: selectedItem.title,
-        price: selectedItem.price,
-        image: selectedItem.imgSRC,
-        ratings: selectedItem.ratings,
-      },
+      type: "REMOVE_FROM_BASKET",
+      id: selectedItem.title,
     });
-    // setOpen(true);
+    Swal.fire("😒", "Item has been Deleted ", "success");
+  };
+
+  const addToBasket = (selectedItem) => {
+    // Check if the item already exists in the basket
+    const existingItemIndex = basket.findIndex(
+      (item) => item.title === selectedItem.title
+    );
+
+    if (existingItemIndex !== -1) {
+      // If the item exists, update its quantity
+      const updatedBasket = [...basket];
+      updatedBasket[existingItemIndex].qty += 1;
+
+      dispatch({
+        type: "UPDATE_BASKET_ITEM",
+        basket: updatedBasket,
+      });
+    } else {
+      // If the item doesn't exist, add it to the basket
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: selectedItem.title,
+          description: selectedItem.description,
+          sellerName: selectedItem.sellerName,
+          sellerCompany: selectedItem.sellerCompany,
+          title: selectedItem.title,
+          price: selectedItem.price,
+          image: selectedItem.imgSRC,
+          ratings: selectedItem.ratings,
+          qty: 1, // Initial quantity set to 1 for a new item
+        },
+      });
+    }
+
     Swal.fire("Hey!", "Item Added to the Cart", "success");
   };
   return (
@@ -72,7 +98,7 @@ const AllProducts = ({ productItem }) => {
             <span className="text-[#007185]"> Learn more</span>
           </div>
 
-          <button
+          {/* <button
             className=" rounded-xl bg-[#FFD814] hover:bg-[#f7ca00] p-1 border my-3 text-center px-6 pb-2 border-[#FCD200] shadow-md xs:scale-[0.75] lg:scale-[1]"
             // onClick={() => {
             //   setOpen(true);
@@ -81,7 +107,39 @@ const AllProducts = ({ productItem }) => {
             onClick={() => addToBasket(productItem)}
           >
             Add to Cart
-          </button>
+          </button> */}
+          {basket.find((item) => item.title === productItem.title)?.qty > 0 ? (
+            <div className="flex w-max  border border-[#FCD200] shadow-md">
+              <button
+                className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  "
+                onClick={() => removeFromBasket(productItem)}
+              >
+                -
+              </button>
+              <div className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  ">
+                {basket.find((item) => item.title === productItem.title)?.qty ||
+                  0}
+              </div>
+
+              <button
+                className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  "
+                onClick={() => addToBasket(productItem)}
+              >
+                +
+              </button>
+            </div>
+          ) : (
+            <button
+              className="p-1 px-5  bg-[#FFD814] transition hover:bg-[#f7ca00] border border-[#FCD200] shadow-md "
+              onClick={() => addToBasket(productItem)}
+            >
+              {/* {basket.find((item) => item.title === phone.title)
+                          ?.qty > 0
+                          ? "+"
+                          : "Add"} */}
+              Add
+            </button>
+          )}
         </div>
       </div>
     </div>

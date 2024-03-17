@@ -66,6 +66,7 @@ const Orders = () => {
                     src={item.image}
                     sellerName={item.SellerName}
                     description={item.description}
+                    qty={item.qty}
                     sellerCompany={item.sellerCompany}
                     hideButton
                   />

@@ -185,6 +185,7 @@
       "sellerCompany": "Realme Official",
       "mrp": "₹11,499.00",
       "price": 14999.0,
+      "qty": 1,
       "discount": "23%",
       "ratings": 3,
       "imgSRC": "https://m.media-amazon.com/images/I/41tSQSq1xJL._AC_SY200_.jpg"
@@ -196,6 +197,7 @@
       "sellerCompany": "Realme Official",
       "mrp": "₹14,999.00",
       "price": 19999.0,
+      "qty": 1,
       "discount": "25%",
       "ratings": 2,
       "imgSRC": "https://m.media-amazon.com/images/I/41snmTn9mrL._AC_SY200_.jpg"
@@ -207,6 +209,7 @@
       "sellerCompany": "Xiaomi Official",
       "mrp": "₹5,498.00",
       "price": 9999.0,
+      "qty": 1,
       "discount": "45%",
       "ratings": 5,
       "imgSRC": "https://m.media-amazon.com/images/I/41GsqdiCvOL._AC_SY200_.jpg"
@@ -218,6 +221,7 @@
       "sellerCompany": "Xiaomi Official",
       "mrp": "₹12,499.00",
       "price": 15999.0,
+      "qty": 1,
       "discount": "22%",
       "ratings": 1,
       "imgSRC": "https://m.media-amazon.com/images/I/411iWoJEJjL._AC_SY200_.jpg"
@@ -229,6 +233,7 @@
       "sellerCompany": "Realme Official",
       "mrp": "₹7,499.00",
       "price": 10999.0,
+      "qty": 1,
       "discount": "32%",
       "ratings": 3,
       "imgSRC": "https://m.media-amazon.com/images/I/41dEcQR7UnL._AC_SY200_.jpg"
@@ -240,6 +245,7 @@
       "sellerCompany": "VIVO",
       "mrp": "₹11,999.00",
       "price": 19999.0,
+      "qty": 1,
       "discount": "40%",
       "ratings": 2,
       "imgSRC": "https://m.media-amazon.com/images/I/4105IiC5tDL._AC_SY200_.jpg"
@@ -251,6 +257,7 @@
       "sellerCompany": "VIVO",
       "mrp": "₹33,999.00",
       "price": 42999.0,
+      "qty": 1,
       "discount": "21%",
       "ratings": 4,
       "imgSRC": "https://m.media-amazon.com/images/I/51o13K4h3-L._AC_SY200_.jpg"
@@ -262,6 +269,7 @@
       "sellerCompany": "Redmi Official",
       "mrp": "₹5,498.00",
       "price": 9999.0,
+      "qty": 1,
       "discount": "45%",
       "ratings": 5,
       "imgSRC": "https://m.media-amazon.com/images/I/41lois+jAAL._AC_SY200_.jpg"
@@ -273,6 +281,7 @@
       "sellerCompany": "HMD",
       "mrp": "₹12,499.00",
       "price": 15999.0,
+      "qty": 1,
       "discount": "22%",
       "ratings": 3,
       "imgSRC": "https://m.media-amazon.com/images/I/41-8D36eA5L._AC_SY200_.jpg"
@@ -286,6 +295,7 @@
       "sellerCompany": "Visit the Harier Store",
       "mrp": "₹20,499.00",
       "price": 14799.0,
+      "qty": 1,
       "discount": "23%",
       "ratings": 4,
       "imgSRC": "https://m.media-amazon.com/images/I/41M+c8X6RjL._SX679_.jpg"
@@ -297,6 +307,7 @@
       "sellerCompany": "Visit the Godrej Store",
       "mrp": "₹17,999.00",
       "price": 12999.0,
+      "qty": 1,
       "discount": "28%",
       "ratings": 2,
       "imgSRC": "https://m.media-amazon.com/images/I/61jQdWXtqSL._SX679_.jpg"
@@ -308,6 +319,7 @@
       "sellerCompany": "Ddikin Official",
       "mrp": "₹25,498.00",
       "price": 37999.0,
+      "qty": 1,
       "discount": "31%",
       "ratings": 5,
       "imgSRC": "https://m.media-amazon.com/images/I/41VjChncmcL._SX679_.jpg"
@@ -319,6 +331,7 @@
       "sellerCompany": "Haier Official",
       "mrp": "₹20,499.00",
       "price": 14999.0,
+      "qty": 1,
       "discount": "22%",
       "ratings": 1,
       "imgSRC": "https://m.media-amazon.com/images/I/81tRMU-PRHL._SX679_.jpg"
@@ -330,6 +343,7 @@
       "sellerCompany": "Whirpool Dealer",
       "mrp": "₹18,499.00",
       "price": 14999.0,
+      "qty": 1,
       "discount": "21%",
       "ratings": 3,
       "imgSRC": "https://m.media-amazon.com/images/I/61iQRax3uyL._SY741_.jpg"
@@ -341,6 +355,7 @@
       "sellerCompany": "xyz Company",
       "mrp": "₹19,999.00",
       "price": 10799.0,
+      "qty": 1,
       "discount": "46%",
       "ratings": 2,
       "imgSRC": "https://m.media-amazon.com/images/I/71JuTDo0BJL._SX679_.jpg"
@@ -352,6 +367,7 @@
       "sellerCompany": "Elica Official",
       "mrp": "₹33,999.00",
       "price": 19999.0,
+      "qty": 1,
       "discount": "43%",
       "ratings": 4,
       "imgSRC": "https://m.media-amazon.com/images/I/41r1Zb3zraL._SX679_.jpg"
@@ -363,6 +379,7 @@
       "sellerCompany": "Bosch Offi",
       "mrp": "₹55,498.00",
       "price": 33900.0,
+      "qty": 1,
       "discount": "40%",
       "ratings": 5,
       "imgSRC": "https://m.media-amazon.com/images/I/71bjqGwMISL._SX679_.jpg"
@@ -374,6 +391,7 @@
       "sellerCompany": "faber Official",
       "mrp": "₹24,499.00",
       "price": 6790.0,
+      "qty": 1,
       "discount": "73%",
       "ratings": 3,
       "imgSRC": "https://m.media-amazon.com/images/I/61gpftD1uWL._SX679_.jpg"

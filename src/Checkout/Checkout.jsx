@@ -39,6 +39,7 @@ const Checkout = () => {
                 description={x.description}
                 src={x.image}
                 ratings={x.ratings}
+                qty={x.qty}
               />
             </div>
           ))}

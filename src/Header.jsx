@@ -19,6 +19,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
+import { getBasketItem } from "./Checkout/Reducer";
 
 const Header = () => {
   const top100Films = [
@@ -252,7 +253,7 @@ const Header = () => {
           <div className="flex items-center text-white lg:mr-[-20px]">
             <ShoppingCartOutlinedIcon fontSize="large" />
             <span className="lg:text-[12px] xs:text-[11px] xs:text-[#f3a847] lg:text-black relative lg:top-[-20px] xs:top-[-18px] lg:left-[-22px] xs:left-[-20px] font-bold lg:mr-4 rounded-full lg:px-1 lg:bg-theme-amazonYC">
-              {basket?.length}
+              {getBasketItem(basket)}
             </span>
           </div>
         </Link>

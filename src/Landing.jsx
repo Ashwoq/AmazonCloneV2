@@ -10,23 +10,70 @@ const Landing = () => {
   const [{ basket }, dispatch] = useStateValue();
   // console.log(basket);
 
+  // const addToBasket = (selectedItem) => {
+  //   setOpen(true);
+  //   dispatch({
+  //     type: "ADD_TO_BASKET",
+  //     item: {
+  //       id: selectedItem.title,
+  //       description: selectedItem.description,
+  //       sellerName: selectedItem.sellerName,
+  //       sellerCompany: selectedItem.sellerCompany,
+  //       title: selectedItem.title,
+  //       price: selectedItem.price,
+  //       image: selectedItem.imgSRC,
+  //       ratings: selectedItem.ratings,
+  //       qty: selectedItem.qty,
+  //     },
+  //   });
+  //   // alert("Item Added");
+  //   // setOpen(true);
+  //   Swal.fire("Hey!", "Item Added to the Cart", "success");
+  // };
+
+  const removeFromBasket = (selectedItem) => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: selectedItem.title,
+    });
+    Swal.fire("😒", "Item has been Deleted ", "success");
+  };
+
   const addToBasket = (selectedItem) => {
     setOpen(true);
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: selectedItem.title,
-        description: selectedItem.description,
-        sellerName: selectedItem.sellerName,
-        sellerCompany: selectedItem.sellerCompany,
-        title: selectedItem.title,
-        price: selectedItem.price,
-        image: selectedItem.imgSRC,
-        ratings: selectedItem.ratings,
-      },
-    });
-    // alert("Item Added");
-    // setOpen(true);
+
+    // Check if the item already exists in the basket
+    const existingItemIndex = basket.findIndex(
+      (item) => item.title === selectedItem.title
+    );
+
+    if (existingItemIndex !== -1) {
+      // If the item exists, update its quantity
+      const updatedBasket = [...basket];
+      updatedBasket[existingItemIndex].qty += 1;
+
+      dispatch({
+        type: "UPDATE_BASKET_ITEM",
+        basket: updatedBasket,
+      });
+    } else {
+      // If the item doesn't exist, add it to the basket
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: selectedItem.title,
+          description: selectedItem.description,
+          sellerName: selectedItem.sellerName,
+          sellerCompany: selectedItem.sellerCompany,
+          title: selectedItem.title,
+          price: selectedItem.price,
+          image: selectedItem.imgSRC,
+          ratings: selectedItem.ratings,
+          qty: 1, // Initial quantity set to 1 for a new item
+        },
+      });
+    }
+
     Swal.fire("Hey!", "Item Added to the Cart", "success");
   };
 
@@ -88,12 +135,40 @@ const Landing = () => {
                       <div className="text-base font-semibold ">
                         {phone.title}
                       </div>
-                      <button
-                        className="p-1 px-3 rounded-sm bg-theme-amazonYC hover:bg-green-500 hover:text-white"
-                        onClick={() => addToBasket(phone)}
-                      >
-                        Add
-                      </button>
+
+                      {basket.find((item) => item.title === phone.title)?.qty >
+                      0 ? (
+                        <div className="flex w-max  border border-[#FCD200] shadow-md">
+                          <button
+                            className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  "
+                            onClick={() => removeFromBasket(phone)}
+                          >
+                            -
+                          </button>
+                          <div className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  ">
+                            {basket.find((item) => item.title === phone.title)
+                              ?.qty || 0}
+                          </div>
+
+                          <button
+                            className="p-1 px-3  bg-[#FFD814] transition  hover:bg-[#f7ca00]  "
+                            onClick={() => addToBasket(phone)}
+                          >
+                            +
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          className="p-1 px-5  bg-[#FFD814] transition hover:bg-[#f7ca00] border border-[#FCD200] shadow-md "
+                          onClick={() => addToBasket(phone)}
+                        >
+                          {/* {basket.find((item) => item.title === phone.title)
+                          ?.qty > 0
+                          ? "+"
+                          : "Add"} */}
+                          Add
+                        </button>
+                      )}
                     </div>
                   </div>
                 ))}
